@@ -1,6 +1,6 @@
 # jgit-mwe
 
-MWE for jgit
+MWE for [Eclipse jgit](https://github.com/eclipse-jgit/jgit)
 
 ## Smoke run
 
