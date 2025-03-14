@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:7.1.0.202411261347-r'
+    implementation 'org.tinylog:tinylog-api:2.7.0'
+    implementation 'org.tinylog:slf4j-tinylog:2.7.0'
+    implementation 'org.tinylog:tinylog-impl:2.7.0'
+}
+
+testing {
+    suites {
+        test {
+            useJUnitJupiter('5.11.3')
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'org.example.App'
+}
