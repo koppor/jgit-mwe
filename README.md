@@ -33,3 +33,12 @@ You can set them in IntelliJ by clicking at the top right the green arrow next t
 You can also it per test run settings:
 
 ![intellij-pat.png](intellij-pat.png)
+
+## FAQ
+
+```
+ JGitTest > testClonePrivateRepository() FAILED
+    org.opentest4j.AssertionFailedError at JGitTest.java:33
+```
+
+This means, you do not have set the environment variables properly.
