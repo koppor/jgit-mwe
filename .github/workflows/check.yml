@@ -17,6 +17,9 @@ jobs:
           cache: gradle
       - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew check
+        env:
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
+          GH_PAT: ${{ secrets.GH_PAT }}
   markdown- lint:
     runs-on: ubuntu-latest
     steps:
