@@ -36,7 +36,7 @@ You can also it per test run settings:
 
 ## FAQ
 
-```
+```junit
  JGitTest > testClonePrivateRepository() FAILED
     org.opentest4j.AssertionFailedError at JGitTest.java:33
 ```
