@@ -20,7 +20,7 @@ MWE for jgit
 8. Execute `cd "C:\Users\koppor\AppData\Local\Temp\junit-6524094164121122642"`
 9. You are in the repository folder now and you can use your git tools to inspect the repository
 
-## Run with creditentials
+## Run with credentials
 
 The test `testClonePrivateRepository` requires credentials.
 
