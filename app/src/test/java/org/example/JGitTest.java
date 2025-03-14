@@ -3,16 +3,15 @@
  */
 package org.example;
 
-import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
-
 import org.tinylog.Logger;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class JGitTest {
 
@@ -20,12 +19,29 @@ class JGitTest {
 
     @Test
     public void testCloneRepository() throws Exception {
-        Git git = Git.cloneRepository()
-                     .setURI("https://github.com/JabRef/jabref.git")
-                     .setDirectory(repoDir.toFile())
-                     .call();
-        git.close();
-        Logger.info("Cloned repository to {}", repoDir);
-        assertTrue(Files.exists(repoDir));
+        try (Git git = Git.cloneRepository()
+                          .setURI("https://github.com/koppor/jgit-mwe.git")
+                          .setDirectory(repoDir.toFile())
+                          .call()) {
+            Logger.info("Cloned repository to {}", repoDir);
+        }
+    }
+
+    @Test
+    public void testClonePrivateRepository() throws Exception {
+        String username = System.getenv("GH_USERNAME");
+        assertNotNull(username);
+
+        String password = System.getenv("GH_PAT");
+        assertNotNull(password);
+
+        UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider = new UsernamePasswordCredentialsProvider(username, password);
+        try (Git git = Git.cloneRepository()
+                          .setURI("https://github.com/koppor/jgit-mwe-private-repo.git")
+                          .setDirectory(repoDir.toFile())
+                          .setCredentialsProvider(usernamePasswordCredentialsProvider)
+                          .call()) {
+            Logger.info("Cloned repository to {}", repoDir);
+        }
     }
 }

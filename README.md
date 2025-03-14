@@ -19,3 +19,17 @@ MWE for jgit
 7. Open "git bash"
 8. Execute `cd "C:\Users\koppor\AppData\Local\Temp\junit-6524094164121122642"`
 9. You are in the repository folder now and you can use your git tools to inspect the repository
+
+## Run with creditentials
+
+The test `testClonePrivateRepository` requires credentials.
+
+It requires two environment variables be set:
+
+- `GH_USERNAME`: Your GitHub username
+- `GH_PAT`: Your GitHub Personal Access Token. The simplest way to create one is using a [classic PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with the `repo` scope.
+
+You can set them in IntelliJ by clicking at the top right the green arrow next to the class name, then "Edit Configurations...", then "Configuration" tab, then "Environment variables" and then adding the two variables.
+You can also it per test run settings:
+
+![intellij-pat.png](intellij-pat.png)
