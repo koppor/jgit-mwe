@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  gradle-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,7 +16,7 @@ jobs:
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew check
-  lint:
+  markdown- lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
