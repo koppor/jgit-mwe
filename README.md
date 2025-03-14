@@ -26,8 +26,8 @@ The test `testClonePrivateRepository` requires credentials.
 
 It requires two environment variables be set:
 
-- `GH_USERNAME`: Your GitHub username
-- `GH_PAT`: Your GitHub Personal Access Token. The simplest way to create one is using a [classic PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with the `repo` scope.
+- `GH_USERNAME`: Your GitHub username. Example: `koppor`
+- `GH_PAT`: Your GitHub Personal Access Token. The simplest way to create one is using a [classic PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with the `repo` scope. Example: `ghp_fY4dO1EoFZeKRALy9lmoZ6HlHTdfq4OATQhU`
 
 You can set them in IntelliJ by clicking at the top right the green arrow next to the class name, then "Edit Configurations...", then "Configuration" tab, then "Environment variables" and then adding the two variables.
 You can also it per test run settings:
